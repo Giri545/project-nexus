@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+      nav {
+        align-items: center;
+      }
+    </style>
+</head>
+<body>
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <nav>
+                <ul style="text-align : center;">
+                  <button onclick="showForm('voter')" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem; align-items:center;">Voter</button>
+                  <button onclick="showForm('admin')" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem; align-items:center;">Admin</button>
+                  <button onclick="showForm('candidate')" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem; align-items:center;">Candidate</button>
+                </ul>
+              </nav>
+              <form>
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                  <h1 class="lead fw-normal mb-0 me-3" style="text-align: center;">Register</h1>
+                  <p></p><br/>
+                </div>
+      
+                <!-- Email input -->
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">User ID</label>
+                  <input type="email" id="form3Example3" class="form-control form-control-lg"
+                    placeholder="Enter a valid User ID" width="5px" style="align-self: center;"/>
+                    <br/>
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Password</label>
+                  <input type="password" id="form3Example4" class="form-control form-control-lg"
+                    placeholder="Enter password" width="5px" style="align-self: center;"/>
+                    <br/>
+                </div>
+
+                <div id="voter-form" >
+                  <label class="form-label" for="form3Example5">Voter ID</label>
+                  <input id="form3Example5" class="form-control form-control-lg"
+                  placeholder="Enter Voter ID" width="5px" style="align-self: center;"/>
+                  <br/>
+                  <!-- User login and registration form code here -->
+                </div>
+                <div id="admin-form" style="display: none;">
+                  <label class="form-label" for="form3Example6">Admin ID</label>
+                  <input id="form3Example6" class="form-control form-control-lg"
+                  placeholder="Enter Admin ID" width="5px" style="align-self: center;"/>
+                  <br/>
+                  <!-- Admin login and registration form code here -->
+                </div>
+                <div id="candidate-form" style="display: none;">
+                  <label class="form-label" for="form3Example7">Candidate ID</label>
+                  <input id="form3Example7" class="form-control form-control-lg"
+                  placeholder="Enter Candidate ID" width="5px" style="align-self: center;"/>
+                  <br/>
+                  <!-- Candidate login and registration form code here -->
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                      Remember me
+                    </label>
+                  </div>
+                  <a href="#!" class="text-body">Forgot password?</a>
+                </div>
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="button" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="#!"
+                      class="link-danger">Login</a></p>
+                </div>
+      
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+          
+        </div>
+        <script>
+          function showForm(formType) {
+            var voterForm = document.getElementById('voter-form');
+            var adminForm = document.getElementById('admin-form');
+            var candidateForm = document.getElementById('candidate-form');
+          
+            switch (formType) {
+              case 'voter':
+                voterForm.style.display = 'block';
+                adminForm.style.display = 'none';
+                candidateForm.style.display = 'none';
+                break;
+              case 'admin':
+                voterForm.style.display = 'none';
+                adminForm.style.display = 'block';
+                candidateForm.style.display = 'none';
+                break;
+              case 'candidate':
+                voterForm.style.display = 'none';
+                adminForm.style.display = 'none';
+                candidateForm.style.display = 'block';
+                break;
+              default:
+              voterForm.style.display = 'block';
+              adminForm.style.display = 'none';
+              candidateForm.style.display = 'none';
+              break;
+            }
+          }
+        </script>
+      </section>
+</body>
+</html>
